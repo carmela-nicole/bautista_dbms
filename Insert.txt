@@ -1,0 +1,1 @@
+SELECT CONCAT(lname, ",",fname) AS Fullname, trainor.name AS trainor, schedule.session, schedule.activity, schedule.date FROM client_member INNER JOIN schedule ON schedule.client_ID=client_member.client_ID INNER JOIN trainor ON trainor.trainor_ID  WHERE client_member.age <25;
