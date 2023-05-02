@@ -1,0 +1,119 @@
+DROP DATABASE  LongTest;
+CREATE DATABASE LongTest;
+
+Use LongTest;
+
+CREATE TABLE Student(
+    StudNo int AUTO_INCREMENT PRIMARY KEY,
+    StudFName varchar(50),
+    StudLName varchar(50),
+    Major varchar(50),
+    Gender enum('Female','Male'),
+    HomeAddress varchar(100)
+);
+
+CREATE TABLE Grade(
+    StudNo int AUTO_INCREMENT PRIMARY KEY,
+    SubjectCode varchar(50),
+    Grade int,
+    CONSTRAINT GradeFK FOREIGN KEY(Grade) REFERENCES Student(StudNo)
+);
+
+CREATE TABLE Subject(
+    SubjectCode varchar(50) PRIMARY KEY,
+    SubjectDescr varchar(50)
+);
+
+
+INSERT INTO Student VALUES
+('S-101',"Ana", "Cruz", "ECE", 'F',"Malolos, Bulacan"),
+('S-102', "Hazel","Ponce","COE", 'F', "Plaridel, Bulacan"),
+('S-103', "Cristov","Concio","ECE", 'M', "Malolos, Bulacan"),
+('S-104', "Aris","Clavio","COE", 'M', "Pulilan, Bulacan"),
+('S-105', "Honey","Pelayo","COE", 'F', "Plaridel, Bulacan"),
+('S-106', "Carrie","Abao","ECE", 'F', "Pulilan, Bulacan");
+
+INSERT INTO Grade (SubjectCode, Grade) VALUES 
+ ( 'Chem 123' , 2.00),
+ (' Math 122 ', 1.00),
+ (' Math 123' , 1.50),
+ ( 'Chem 123', 1.75),
+ (' Math 122', 1.25),
+ ( 'Math 123', 1.50),
+ ( 'Chem 123 ',2.00),
+ ( 'Math 122', 1.75),
+ ( 'Math 123 ', 1.25),
+ ( 'Chem 123', 1.25),
+ ( 'Math 122', 2.25),
+ ( 'Math 123' , 2.50),
+ ( 'Chem 123' , 1.00),
+ ( 'Math 122 ', 1.25),
+ (' Math 123' , 2.50),
+ ( 'Chem 123', 1.25),
+ ( 'Math 122' , 1.50),
+ ( 'Math 123' , 1.75);
+ 
+INSERT INTO Subject VALUES
+( 'Chem 123', "Chemistry"),
+( 'Math 122', "Trigonometry"),
+( 'Math 123', "Algebra");
+
+DROP DATABASE  LongTest;
+CREATE DATABASE LongTest;
+
+Use LongTest;
+
+CREATE TABLE Student(
+    StudNo int AUTO_INCREMENT PRIMARY KEY,
+    StudFName varchar(50),
+    StudLName varchar(50),
+    Major varchar(50),
+    Gender enum('Female','Male'),
+    HomeAddress varchar(100)
+);
+
+CREATE TABLE Grade(
+    StudNo int AUTO_INCREMENT PRIMARY KEY,
+    SubjectCode varchar(50),
+    Grade int,
+    CONSTRAINT GradeFK FOREIGN KEY(Grade) REFERENCES Student(StudNo)
+);
+
+CREATE TABLE Subject(
+    SubjectCode varchar(50) PRIMARY KEY,
+    SubjectDescr varchar(50)
+);
+
+
+INSERT INTO Student VALUES
+('S-101',"Ana", "Cruz", "ECE", 'F',"Malolos, Bulacan"),
+('S-102', "Hazel","Ponce","COE", 'F', "Plaridel, Bulacan"),
+('S-103', "Cristov","Concio","ECE", 'M', "Malolos, Bulacan"),
+('S-104', "Aris","Clavio","COE", 'M', "Pulilan, Bulacan"),
+('S-105', "Honey","Pelayo","COE", 'F', "Plaridel, Bulacan"),
+('S-106', "Carrie","Abao","ECE", 'F', "Pulilan, Bulacan");
+
+INSERT INTO Grade (SubjectCode, Grade) VALUES 
+ ( 'Chem 123' , 2.00),
+ (' Math 122 ', 1.00),
+ (' Math 123' , 1.50),
+ ( 'Chem 123', 1.75),
+ (' Math 122', 1.25),
+ ( 'Math 123', 1.50),
+ ( 'Chem 123 ',2.00),
+ ( 'Math 122', 1.75),
+ ( 'Math 123 ', 1.25),
+ ( 'Chem 123', 1.25),
+ ( 'Math 122', 2.25),
+ ( 'Math 123' , 2.50),
+ ( 'Chem 123' , 1.00),
+ ( 'Math 122 ', 1.25),
+ (' Math 123' , 2.50),
+ ( 'Chem 123', 1.25),
+ ( 'Math 122' , 1.50),
+ ( 'Math 123' , 1.75);
+ 
+INSERT INTO Subject VALUES
+( 'Chem 123', "Chemistry"),
+( 'Math 122', "Trigonometry"),
+( 'Math 123', "Algebra");
