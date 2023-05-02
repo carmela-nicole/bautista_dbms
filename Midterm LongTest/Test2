@@ -1,0 +1,11 @@
+// Number 1
+
+SELECT CONCAT(StudFName, ",", StudLName) AS 'Student Name', HomeAddress FROM Student WHERE Gender = 'F' AND Major = 'ECE" AND HomeAddress = 'Malolos, Bulacan'
+
+//NUmber 2
+
+SELECT CONCAT(StudFName, ",", StudLName) AS 'Student Name',Major, Subject.SubjectDescr AS ' SUbject Name', grade.Grade FROM Student INNER JOIN Grade ON Student.SubjectCode = Grade.SubjectCode WHERE Subject.SubjectCode + 'Math 122' AND Grade.Grade <= 2.0
+
+// Number 3
+
+SELECT CONCAT(StudFName, ",", StudLName) AS 'Student Name', Gender,  HomeAddress AS Address, SubjectDescr AS ' Subject Name', Grade.Grade FROM Student INNER JOIN Grade ON Student.StudNo = Grade.StudNo INNER JOIN Subject.SubjectCode = Grade.SubjectCode WHERE Student.Major = 'COE'
