@@ -1,0 +1,89 @@
+DROP DATABASE students_info;
+CREATE DATABASE students_info;
+USE students_info;
+
+CREATE TABLE Student(
+    StudNo int PRIMARY KEY AUTO_INCREMENT,
+    StudFName varchar(100),
+    StudLName varchar(100),
+    Gender varchar(100),
+    HomeAddress varchar(100)
+);
+
+CREATE TABLE Student_Major(
+    StudNo int PRIMARY KEY AUTO_INCREMENT ,
+    Major varchar(100)
+);
+
+CREATE TABLE Major_Subject(
+      Major varchar(100) PRIMARY KEY,
+      SubjCode varchar(100),
+      SubjDescr varchar(100)
+);
+
+CREATE TABLE Student_grade(
+   	  Grade double ,
+      Major varchar(100) ,
+      SubjCode varchar(100),
+      SubjDescr varchar(100)
+);
+
+INSERT INTO Student VALUES
+('S-101',"Ana","Cruz","F", "Malolos,Bulacan"),
+('S-101',"Ana","Cruz","F","Malolos,Bulacan"),
+('S-101',"Ana","Cruz","F","Malolos,Bulacan"),
+('S-102',"Hazel","Ponce","F","Plaridel,Bulacan"),
+('S-102',"Hazel","Ponce","F", "Plaridel,Bulacan"),
+('S-102',"Hazel","Ponce","F","Plaridel,Bulacan"),
+('S-103',"Cristov","Concio","M", "Malolos,Bulacan"),
+('S-103',"Cristov","Concio","M","Malolos,Bulacan"),
+('S-103',"Cristov","Concio","M","Malolos,Bulacan"),
+('S-104',"Aris","Clavio","M", "Pulilan,Bulacan"),
+('S-104',"Aris","Clavio","M","Pulilan,Bulacan"),
+('S-104',"Aris","Clavio","M", "Pulilan,Bulacan"),
+('S-105',"Honey","Pelayo","F","Plaridel,Bulacan"),
+('S-105',"Honey","Pelayo","F","Plaridel,Bulacan"),
+('S-105',"Honey","Pelayo","F","Plaridel,Bulacan"),
+('S-106',"Carrie","Abao","F","Pulilan,Bulacan"),
+('S-106',"Carrie","Abao","F","Pulilan,Bulacan"),
+('S-106',"Carrie","Abao","F", "Pulilan,Bulacan");
+
+INSERT INTO Student_grade VALUES
+("1.50","ECE","Math 123", "Algebra"),
+("1.00","ECE","Math 122","Trigonometry"),
+("2.00", "ECE","Chem 123",  "Chemistry"),
+( "1.50","COE","Math 123",  "Algebra"),
+("1.25","COE","Math 122", "Trigometry"),
+("1.75","COE","Chem 123","Chemistry"),
+( "1.75","ECE","Math 122", "Trigonometry"),
+( "2.00","ECE","Chem 123","Chemistry"),
+( "1.25","ECE","Math 123", "Algebra"),
+("2.50", "COE","Math 123","Algebra"),
+( "2.25", "COE","Math 122", "Trigonometry"),
+( "1.25","COE","Chem 123","Chemistry"),
+( "2.50","COE","Math 123", "Algebra"),
+( "1.25","COE","Math 122", "Trigonometry"),
+("1.00","COE","Chem 123", "Chemestry"),
+( "1.50", "ECE","Math 122","Trigonometry"),
+( "1.25", "ECE","Chem 123", "Chemestry"),
+( "1.75","ECE","Math 123","Algebra");
+
+INSERT INTO major_subject VALUES
+("ECE","Math 123", "Algebra"),
+("ECE","Math 122","Trigonometry"),
+("ECE","Chem 123",  "Chemistry"),
+("COE","Math 123",  "Algebra"),
+("COE","Math 122", "Trigometry"),
+("COE","Chem 123","Chemistry"),
+("ECE","Math 122", "Trigonometry"),
+("ECE","Chem 123","Chemistry"),
+("ECE","Math 123", "Algebra"),
+( "COE","Math 123","Algebra"),
+(  "COE","Math 122", "Trigonometry"),
+("COE","Chem 123","Chemistry"),
+("COE","Math 123", "Algebra"),
+( "COE","Math 122", "Trigonometry"),
+("COE","Chem 123", "Chemestry"),
+( "ECE","Math 122","Trigonometry"),
+( "ECE","Chem 123", "Chemestry"),
+( "ECE","Math 123","Algebra");
