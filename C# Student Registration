@@ -1,0 +1,55 @@
+using System;
+
+class Student{
+   public string name = "Sunoo ";
+   public string age = "19 ";
+   public string school_id = "20-111 ";
+   public string subject= "DBMS1 ";
+   public string course = "BSIT";
+   
+}
+
+// class School{
+//      string display_student(){
+     
+//         return student.name;
+//      string school_name = " EPCST ";
+    
+// }
+
+// class Subject : Student{
+//      string subj_code = "123";
+//      string display_student(){
+//         return student.name;
+//         return student.subject;
+//     }
+    
+//     }
+
+// class Course{
+//      string display_student(){
+//         return student.name;
+//      string display_school(){
+//         return school.name;
+//      string display_subject(){
+//         return subject.name;
+// }
+
+class HelloWorld {
+  static void Main() {
+    Console.WriteLine("Hello World");
+    
+    Student stud1 = new Student();
+    Console.WriteLine(stud1.name + stud1.age + stud1.school_id + stud1.subject + stud1.course);
+    
+//     Subject  subj = new Subject();
+//     Console.WriteLine(subj.student + stud1.subject + subj.subj_code +  );
+    
+    
+//     Course course = new Course();
+//     Console.WriteLine(course.display_student+ course.display_subject+ course.display_school) );
+//   }
+} 
+
+
+}
