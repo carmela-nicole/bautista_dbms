@@ -1,0 +1,96 @@
+DROP DATABASE car_Dealership;
+CREATE DATABASE car_Dealership;
+Use car_Dealership;
+
+CREATE TABLE car(
+    carID int AUTO_INCREMENT PRIMARY KEY,
+    serialNumber int,
+    make varchar(50),
+    model varchar(50),
+    color varchar(50),
+    year year,
+    car4Sale varchar(50)
+ );
+CREATE TABLE customer(
+    customerID int AUTO_INCREMENT PRIMARY KEY,
+    lastName varchar(50),
+    firstName varchar(50),
+    phoneNumber int,
+    address varchar(50),
+    city varchar(50),
+    provinve varchar(50),
+    country varchar(50),
+    postalCode int
+  );
+    
+CREATE TABLE Salesperson(
+    salespersonID int AUTO_INCREMENT PRIMARY KEY,
+    lastName varchar(50),
+    firstName varchar(50)
+    );
+    
+    
+CREATE TABLE salesIncome(
+    invoiceID int AUTO_INCREMENT PRIMARY KEY,
+    invoiceNumber int,
+    date date,
+    carID int,
+    customerID int,
+    salespersonID int,
+    CONSTRAINT salesIncomeFK FOREIGN KEY(carID) REFERENCES car(carID),
+    FOREIGN KEY(customerID) REFERENCES customer(customerID),
+    FOREIGN KEY(salespersonID) REFERENCES salesperson(salespersonID)
+    );
+    
+
+CREATE TABLE serviceTicket(
+    serviceTicket_ID int AUTO_INCREMENT PRIMARY KEY,
+    carID int,
+    customerID int,	
+    dateReceived varchar(50),
+    comments varchar(50),
+    dateReturntoCustomer date,
+    CONSTRAINT serviceTicketFK FOREIGN KEY(carID) REFERENCES car(carID),
+    FOREIGN KEY(customerID) REFERENCES customer(customerID)
+    );
+
+CREATE TABLE mechanic(
+    mechanicID int AUTO_INCREMENT PRIMARY KEY,
+    lastName varchar(50),
+    firstName varchar(50)
+    );
+
+CREATE TABLE service(
+    serviceID int AUTO_INCREMENT PRIMARY KEY,
+    serviceName varchar(50),
+    hourlyRate varchar(50)
+    );
+    
+CREATE TABLE serviceMechanic(
+    servicemechanicID int AUTO_INCREMENT PRIMARY KEY,
+    serviceID int,
+    mechanicID int,
+    hour int,
+    comments varchar(50),
+    rate varchar(10),
+    CONSTRAINT serviceMechanicFK FOREIGN KEY(serviceID) REFERENCES service(serviceID),
+    FOREIGN KEY(mechanicID) REFERENCES mechanic(mechanicID)    
+    );
+    
+CREATE TABLE parts(
+    partsID int AUTO_INCREMENT PRIMARY KEY,
+    partNumber int,
+    description varchar(50),
+    purchasePrice int,
+    retailPrice int
+    );
+    
+ CREATE TABLE partsUsed(
+     partsUsed_ID int AUTO_INCREMENT PRIMARY KEY,
+     partsID int,
+     serviceticketID int,
+     numberUsed int,
+     price int,
+     CONSTRAINT partsUsed FOREIGN KEY(partsID) REFERENCES parts(partsID),
+     FOREIGN KEY(serviceticketID) REFERENCES serviceTicket(serviceticket_ID)
+     );
